@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/LoginFragment">
+
+    <fragment
+        android:id="@+id/RegisterFragment"
+        android:name="android.tvz.hr.tic_tac_toe_online.ui.RegisterFragment"
+        android:label="@string/register_fragment_label"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_RegisterFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="android.tvz.hr.tic_tac_toe_online.ui.LoginFragment"
+        android:label="@string/login_fragment_label"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_LoginFragment_to_RegisterFragment"
+            app:destination="@id/RegisterFragment" />
+
+        <action
+            android:id="@+id/action_LoginFragment_to_ParentFragment"
+            app:destination="@id/ParentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ParentFragment"
+        android:name="android.tvz.hr.tic_tac_toe_online.ui.ParentFragment"
+        android:label="ParentFragment">
+
+        <action
+            android:id="@+id/action_ParentFragment_to_LobbyFragment"
+            app:destination="@id/LobbyFragment" />
+
+        <action
+            android:id="@+id/action_ParentFragment_to_RankingFragment"
+            app:destination="@id/RankingFragment" />
+
+        <action
+            android:id="@+id/action_ParentFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+
+        <action
+            android:id="@+id/action_LobbyFragment_to_TicTacToeBoardFragment"
+            app:destination="@+id/TicTacToeBoardFragment" >
+            <argument
+                android:name="gameInformation"
+                app:argType="string" />
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/LobbyFragment"
+        android:name="android.tvz.hr.tic_tac_toe_online.ui.LobbyFragment"
+        android:label="@string/lobby_fragment_label"
+        tools:layout="@layout/fragment_lobby">
+
+        <action
+            android:id="@+id/action_LobbyFragment_to_RankingFragment"
+            app:destination="@id/RankingFragment" />
+
+        <action
+            android:id="@+id/action_LobbyFragment_to_TicTacToeBoardFragment"
+            app:destination="@+id/TicTacToeBoardFragment" >
+            <argument
+                android:name="gameInformation"
+                app:argType="string" />
+        </action>
+
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/TicTacToeBoardFragment"
+        android:name="android.tvz.hr.tic_tac_toe_online.ui.TicTacToeBoardFragment"
+        android:label="@string/tic_tac_toe_fragment_label"
+        tools:layout="@layout/fragment_tic_tac_toe_board" >
+
+        <action
+            android:id="@+id/action_LobbyFragment_to_TicTacToeBoardFragment"
+            app:destination="@id/TicTacToeBoardFragment" />
+            <argument
+                android:name="gameInformation"
+                app:argType="string" />
+
+        <action
+            android:id="@+id/action_TicTacToeBoardFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+
+        <action
+            android:id="@+id/action_TicTacToeBoardFragment_to_LobbyFragment"
+            app:destination="@id/LobbyFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/RankingFragment"
+        android:name="android.tvz.hr.tic_tac_toe_online.ui.LeaderboardsFragment"
+        android:label="@string/ranking_fragment_label"
+        tools:layout="@layout/fragment_ranking">
+
+        <action
+            android:id="@+id/action_RankingFragment_to_LobbyFragment"
+            app:destination="@id/LobbyFragment" />
+    </fragment>
+
+</navigation>

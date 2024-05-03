@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_to_your_account" />
+    <string name="prompt_password" />
+    <string name="login" />
+    <string name="don_t_have_an_account" />
+    <string name="create_account" />
+    <string name="first_fragment_label" />
+    <string name="login_fragment_label" />
+    <string name="register_fragment_label" />
+    <string name="register" />
+    <string name="confirm_password" />
+    <string name="already_have_an_account" />
+    <string name="name" />
+    <string name="games_fragment_label" />
+    <string name="ranking_fragment_label" />
+    <string name="lobby_fragment_label" />
+    <string name="tic_tac_toe_fragment_label" />
+</resources>
